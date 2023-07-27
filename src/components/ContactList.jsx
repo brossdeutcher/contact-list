@@ -1,3 +1,6 @@
+import { useState } from "react";
+import ContactRow from "./ContactRow";
+
 const dummyContacts = [
   { id: 1, name: "R2-D2", phone: "222-222-2222", email: "r2d2@droids.com" },
   { id: 2, name: "C-3PO", phone: "333-333-3333", email: "c3po@droids.com" },
@@ -5,6 +8,10 @@ const dummyContacts = [
 ];
 
 const ContactList = () => {
+
+  const [contacts, setContacts] = useState(dummyContacts);
+  console.log(`Contacts: `, contacts);
+
   return (
     <table>
       <thead>
@@ -17,9 +24,11 @@ const ContactList = () => {
             <th>Name</th>
             <th>Email</th>
             <th>Phone</th>
-          </tr>
-
-        </tbody>
+        </tr>
+        {contacts.map((singleContact) => {
+          return <ContactRow key={singleContact.id} contact={singleContact} />
+        })}
+      </tbody>
     </table>
   )
 }
