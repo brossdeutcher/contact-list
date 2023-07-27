@@ -1,12 +1,11 @@
 
-const ContactRow = (props) => {
-  const contact = props.contact;
+const ContactRow = (contact) => {
   return (
     <>
       <tr>
-        <td>{contact.name}</td>
-        <td>{contact.phone}</td>
-        <td>{contact.email}</td>
+        <td>{contact.contact.name}</td>
+        <td>{contact.contact.phone}</td>
+        <td>{contact.contact.email}</td>
       </tr>
     </>
   )

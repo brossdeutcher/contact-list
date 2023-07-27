@@ -24,7 +24,6 @@ const ContactList = () => {
     }
     getContacts();
   }, [])
-  console.log('Result: ', contacts);
 
   return (
     <table>
